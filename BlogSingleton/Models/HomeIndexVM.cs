@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace BlogSingleton.Models
+{
+    public class HomeIndexVM
+    {
+        public List<BlogPost> BlogPosts { get; set; }
+        public List<Comment> Comments { get; set; }
+        public HomeIndexVM()
+        {
+            BlogPosts = new List<BlogPost>();
+            Comments = new List<Comment>();
+        }
+    }
+}
