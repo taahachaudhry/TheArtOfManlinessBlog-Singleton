@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlogSingleton.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,8 @@ namespace BlogSingleton.Controllers
 {
     public class HomeController : Controller
     {
+        List<BlogPost> blogposts = Singleton.Instance.BlogPosts;
+        List<Comment> comments = Singleton.Instance.Comments;
         public ActionResult Index()
         {
             return View();
