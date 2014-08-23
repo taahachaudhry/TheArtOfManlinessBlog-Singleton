@@ -11,15 +11,31 @@
     <div class="col-md-4">
         <div class="panel panel-default">
             <div class="panel-body">
-                <h2>Featured Post</h2>
-                <h3>@Model.FeaturedPost.Title</h3>
+                <div style="text-align:center; font-weight:700; font-size:large"><p>Featured Post</p></div>
+                <h3></h3>
+                <table class="table table-condensed table-striped table-responsive table-hover">
+                    <tr onclick="location.href='/Home/BlogPost/@Model.FeaturedPost.ID'">
+                        <td>@Model.FeaturedPost.Title</td>
+                    </tr> 
+                </table>
             </div>
         </div>
     </div>
     <div class="col-md-8">
         <div class="panel panel-default">
             <div class="panel-body">
-                <h2>List of Blog Posts</h2>
+                <div style="text-align:center; font-weight:700; font-size:large"><p>Recent Blog Entries</p></div>
+                <table class="table table-condensed table-striped table-responsive table-hover">
+                    <tr><th>Date</th><th>Title</th><th></th></tr>
+                    @foreach (var post in Model.BlogPosts)
+                    {
+                        <tr onclick="location.href='/Home/BlogPost/@post.ID'">
+                            <td>@post.Date.ToShortDateString()</td>
+                            <td>@post.Title</td>
+                            <td>@post.Post.Substring(0, 50) ...</td>
+                        </tr>
+                    }
+                </table>
             </div>
         </div>
     </div>
