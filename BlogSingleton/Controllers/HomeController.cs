@@ -16,11 +16,12 @@ namespace BlogSingleton.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Blog()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            HomeIndexVM bucket = new HomeIndexVM();
+            bucket.BlogPosts = blogposts;
+            
+            return View(bucket);
         }
 
         public ActionResult Contact()
