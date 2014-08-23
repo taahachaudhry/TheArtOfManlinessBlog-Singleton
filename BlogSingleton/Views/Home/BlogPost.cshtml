@@ -1,0 +1,25 @@
+﻿@model BlogSingleton.Models.HomeIndexVM
+
+<br /><div class="panel panel-default">
+    <div class="panel-body">
+        <div style="text-align:center">
+            <h1>@Model.BlogPosts[0].Title</h1>
+        </div>
+            <h3>@Model.BlogPosts[0].Post</h3>
+            <a class="btn btn-med btn-primary pull-right" href="/Home/Edit/@Model.BlogPosts[0].ID">Edit</a>
+    </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h3>Comments:</h3>
+            @foreach (var comment in @Model.Comments)
+            {
+                <div style="display:inline">
+                    <strong>"@comment.Message"</strong>- @comment.Name<br />
+                </div>
+            }
+            <a class="btn center-block btn-success" href="/Home/AddReview/@Model.BlogPosts[0].ID">Add Review</a>
+        </div>
+    </div>
+
+

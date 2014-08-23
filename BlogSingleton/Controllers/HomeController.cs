@@ -24,11 +24,13 @@ namespace BlogSingleton.Controllers
             return View(bucket);
         }
 
-        public ActionResult Contact()
+        public ActionResult BlogPost(int id)
         {
-            ViewBag.Message = "Your contact page.";
+            HomeIndexVM bucket = new HomeIndexVM();
+            bucket.BlogPosts.Add(blogposts.Where(x => x.ID == id).FirstOrDefault());
+            bucket.Comments = comments.Where(x => x.BlogPostID == id).ToList();
 
-            return View();
+            return View(bucket);
         }
     }
 }
