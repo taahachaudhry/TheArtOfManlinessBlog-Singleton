@@ -7,6 +7,7 @@ namespace BlogSingleton.Models
 {
     public class HomeIndexVM
     {
+        public BlogPost FeaturedPost { get; set; }
         public List<BlogPost> BlogPosts { get; set; }
         public List<Comment> Comments { get; set; }
         public HomeIndexVM()

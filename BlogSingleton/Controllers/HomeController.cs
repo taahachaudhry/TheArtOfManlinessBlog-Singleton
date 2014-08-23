@@ -13,7 +13,12 @@ namespace BlogSingleton.Controllers
         List<Comment> comments = Singleton.Instance.Comments;
         public ActionResult Index()
         {
-            return View();
+            int RandomNum = new Random().Next(blogposts.Count());
+            HomeIndexVM bucket = new HomeIndexVM();
+            bucket.BlogPosts = blogposts;
+            bucket.FeaturedPost = bucket.BlogPosts[RandomNum];
+            //bucket.BlogPosts = bucket.BlogPosts
+            return View(bucket);
         }
 
         public ActionResult Blog()
