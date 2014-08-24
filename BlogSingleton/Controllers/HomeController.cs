@@ -42,5 +42,17 @@ namespace BlogSingleton.Controllers
             BlogPost blogpost = blogposts.Where(x => x.ID == id).FirstOrDefault();
             return View(blogpost);
         }
+        [HttpPost]
+        public ActionResult EditBlogPost(BlogPost blogpost)
+        {
+            var bp = blogposts.Where(x => x.ID == blogpost.ID).FirstOrDefault();
+            if (bp.GetType().ToString() == "BlogSingleton.Models.BlogPost")
+            {
+                BlogPost oldPost = (BlogPost)bp;
+                oldPost.Title = blogpost.Title;
+                oldPost.Post = blogpost.Post;
+            }
+            return RedirectToAction("BlogPost", new { id = blogpost.ID });
+        }
     }
 }
