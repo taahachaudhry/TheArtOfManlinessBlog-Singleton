@@ -11,14 +11,14 @@
     </div>
     <div class="panel panel-default">
         <div class="panel-body">
-            <h3>Comments:</h3>
+            <div style="font-weight:700; font-size:large"><p>Comments:</p></div>
             @foreach (var comment in @Model.Comments)
             {
-                <div style="display:inline">
-                    <strong>"@comment.Message"</strong>- @comment.Name<br />
-                </div>
+                <blockquote>
+                    <strong>"@comment.Message"</strong><footer>@comment.Name</footer>
+                </blockquote>
             }
-            <a class="btn center-block btn-success" href="/Home/AddReview/@Model.BlogPosts[0].ID">Add Review</a>
+            <a class="btn btn-med btn-success pull-right" href="/Home/AddReview/@Model.BlogPosts[0].ID">Add Review</a>
         </div>
     </div>
 

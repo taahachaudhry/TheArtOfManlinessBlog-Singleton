@@ -1,18 +1,15 @@
 ﻿@model BlogSingleton.Models.HomeIndexVM
 <br /><div class="panel panel-default">
+          <div class="panel-heading" style="text-align:center; font-weight:700; font-size:30px; padding-bottom: 0px;"><p>The Art of Manliness</p></div>
     <div class="panel-body">
-        <div style="text-align:center">
-            <h1>Welcome to the Art of Manliness Blog! This blog will help you act like a man, whether it's upgrading your style, acting more like a man and reviving chivalry, or fulfilling your animal side of loving to eat food and finding the best places to eat! Enjoy! And Stay Classy!</h1>
+        <div style="text-align:center; font-weight:400; font-size:25px; padding-bottom: 0px;"><p>Welcome to The Art of Manliness Blog! This blog will help you to become a man– whether it's upgrading your style, acting more like a gentleman and reviving chivalry, or fulfilling your animal side of loving to eat food and finding the best places to eat! Enjoy! And Stay Classy!</p></div>
         </div>
     </div>
-</div>
-
 <div class="row">
     <div class="col-md-4">
         <div class="panel panel-default">
+            <div class="panel-heading" style="text-align:center; font-weight:700; font-size:large; padding-bottom: 0px;"><p>Featured Post</p></div>
             <div class="panel-body">
-                <div style="text-align:center; font-weight:700; font-size:large"><p>Featured Post</p></div>
-                <h3></h3>
                 <table class="table table-condensed table-striped table-responsive table-hover">
                     <tr onclick="location.href='/Home/BlogPost/@Model.FeaturedPost.ID'">
                         <td>@Model.FeaturedPost.Title</td>
@@ -23,8 +20,8 @@
     </div>
     <div class="col-md-8">
         <div class="panel panel-default">
+            <div class="panel-heading" style="text-align:center; font-weight:700; font-size:large; padding-bottom: 0px;"><p>Recent Blog Entries</p></div>
             <div class="panel-body">
-                <div style="text-align:center; font-weight:700; font-size:large"><p>Recent Blog Entries</p></div>
                 <table class="table table-condensed table-striped table-responsive table-hover">
                     <tr><th>Date</th><th>Title</th><th></th></tr>
                     @foreach (var post in Model.BlogPosts)

@@ -23,7 +23,7 @@ namespace BlogSingleton.Models
             };
             Comments = new List<Comment>()
             {
-                new Comment("Robin","Damn Bandu Khan is definetly in my top 5 favorite restaurants. Can't wait to go back!",0),
+                new Comment("Robin","Dang Bandu Khan is definetly in my top 5 favorite restaurants. Can't wait to go back!",0),
                 new Comment("Rocky","M&M really does have mouthwatering burgers. Thanks!", 0),
                 new Comment("Ibrahim", "Upgraded my style and the compliments haven't stopped. Thank you!",1),
                 new Comment("Abdulghani","Any recommendations on where to shop?",1)
