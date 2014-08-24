@@ -16,11 +16,13 @@
                 <blockquote>
                     <strong>"@comment.Message"</strong><footer>
                     @comment.Name, @comment.Date.ToShortDateString()
-                    <a class="btn btn-sm btn-danger pull-right" href="/Home/DeleteReview/@Model.BlogPosts[0].ID">Delete</a>
-                </footer>
+                    <form method="post" action="/Home/DeleteComment/@comment.CommentID/">
+                        <input type="submit" value="Delete" class="btn btn-sm btn-danger pull-right" /><br />
+                    </form>
+                    </footer>
                 </blockquote>
             }
-            <br /><a class="btn btn-med btn-success pull-right" href="/Home/AddReview/@Model.BlogPosts[0].ID">Add Review</a>
+            <br /><a class="btn btn-med btn-success pull-right" href="/Home/AddComment/@Model.BlogPosts[0].ID">Add Comment</a>
         </div>
     </div>
 

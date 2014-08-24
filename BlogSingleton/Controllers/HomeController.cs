@@ -80,5 +80,32 @@ namespace BlogSingleton.Controllers
 
             return RedirectToAction("Blog");
         }
+        [HttpGet]
+        public ActionResult AddComment(int id)
+        {
+            var blogpost = blogposts.Where(x => x.ID == id).FirstOrDefault();
+            return View(blogpost);
+        }
+        [HttpPost]
+        public ActionResult AddComment(string name, string message, int blogpostid)
+        {
+            Comment comment = new Comment();
+            comment.Name = name;
+            comment.Message = message;
+            comment.CommentID = Comment.NextCommentID++;
+            comment.BlogPostID = blogpostid;
+            comment.Date = DateTime.Today;
+            comments.Add(comment);
+
+            return RedirectToAction("BlogPost", new {id = blogpostid});
+        }
+        [HttpPost]
+        public ActionResult DeleteComment(int id)
+        {
+            var target = comments.Where(x => x.CommentID == id).FirstOrDefault();
+            comments.Remove(target);
+
+            return RedirectToAction("Blog");
+        }
     }
 }
