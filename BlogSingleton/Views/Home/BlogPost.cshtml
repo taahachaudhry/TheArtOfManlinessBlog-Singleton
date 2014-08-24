@@ -6,7 +6,7 @@
             <h1>@Model.BlogPosts[0].Title</h1>
         </div>
             <h3>@Model.BlogPosts[0].Post</h3>
-            <a class="btn btn-med btn-primary pull-right" href="/Home/Edit/@Model.BlogPosts[0].ID">Edit</a>
+            <a class="btn btn-med btn-primary pull-right" href="/Home/EditBlogPost/@Model.BlogPosts[0].ID">Edit</a>
     </div>
     </div>
     <div class="panel panel-default">
@@ -15,10 +15,13 @@
             @foreach (var comment in @Model.Comments)
             {
                 <blockquote>
-                    <strong>"@comment.Message"</strong><footer>@comment.Name</footer>
+                    <strong>"@comment.Message"</strong><footer>
+                    @comment.Name
+                    <a class="btn btn-sm btn-danger pull-right" href="/Home/AddReview/@Model.BlogPosts[0].ID">Delete</a>
+                </footer>
                 </blockquote>
             }
-            <a class="btn btn-med btn-success pull-right" href="/Home/AddReview/@Model.BlogPosts[0].ID">Add Review</a>
+            <br /><a class="btn btn-med btn-success pull-right" href="/Home/AddReview/@Model.BlogPosts[0].ID">Add Review</a>
         </div>
     </div>
 

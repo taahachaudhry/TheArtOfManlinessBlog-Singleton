@@ -37,5 +37,10 @@ namespace BlogSingleton.Controllers
 
             return View(bucket);
         }
+        public ActionResult EditBlogPost(int id)
+        {
+            BlogPost blogpost = blogposts.Where(x => x.ID == id).FirstOrDefault();
+            return View(blogpost);
+        }
     }
 }
