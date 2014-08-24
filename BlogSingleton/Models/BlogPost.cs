@@ -23,5 +23,9 @@ namespace BlogSingleton.Models
         {
 
         }
+        public int IncrementID()
+        {
+            return NextID++;
+        }
     }
 }

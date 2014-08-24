@@ -11,6 +11,8 @@ namespace BlogSingleton.Controllers
     {
         List<BlogPost> blogposts = Singleton.Instance.BlogPosts;
         List<Comment> comments = Singleton.Instance.Comments;
+
+        
         public ActionResult Index()
         {
             int RandomNum = new Random().Next(blogposts.Count());
@@ -36,6 +38,23 @@ namespace BlogSingleton.Controllers
             bucket.Comments = comments.Where(x => x.BlogPostID == id).ToList();
 
             return View(bucket);
+        }
+        [HttpGet]
+        public ActionResult AddPost()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddPost(string title, string post)
+        {
+            BlogPost blogpost = new BlogPost();
+            blogpost.Title = title;
+            blogpost.Post = post;
+            blogpost.ID = BlogSingleton.Models.BlogPost.NextID++;
+            blogpost.Date = DateTime.Today;
+            blogposts.Add(blogpost);
+
+            return RedirectToAction("Blog");
         }
         public ActionResult EditBlogPost(int id)
         {
