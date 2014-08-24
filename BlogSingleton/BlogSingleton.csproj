@@ -226,6 +226,7 @@
     <Content Include="Views\Home\EditBlogPost.cshtml" />
     <Content Include="Views\Home\AddPost.cshtml" />
     <Content Include="Views\Home\AddComment.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

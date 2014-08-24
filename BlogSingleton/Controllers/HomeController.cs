@@ -109,5 +109,15 @@ namespace BlogSingleton.Controllers
 
             return RedirectToAction("Blog");
         }
+        
+        //public ActionResult Search(string id)
+        //{
+        //    string searchString = id;
+        //    if (!String.IsNullOrEmpty(searchString))
+        //    {
+        //        var results = blogposts.Where(x => x.Title.ToLower().Contains(searchString.ToLower())).ToList();
+        //        return View(results);
+        //    }
+        //}
     }
 }
