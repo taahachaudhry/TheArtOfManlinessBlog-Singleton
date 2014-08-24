@@ -54,5 +54,12 @@ namespace BlogSingleton.Controllers
             }
             return RedirectToAction("BlogPost", new { id = blogpost.ID });
         }
+        public ActionResult Delete(int id)
+        {
+            var target = blogposts.Where(x => x.ID == id).FirstOrDefault();
+            blogposts.Remove(target);
+
+            return RedirectToAction("Blog");
+        }
     }
 }

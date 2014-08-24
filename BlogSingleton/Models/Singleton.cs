@@ -20,7 +20,7 @@ namespace BlogSingleton.Models
             {
                 new BlogPost("The Houston Food Spots","Ever wonder where are the best places to eat in Houston, TX. Well here's a small list of some of my favorite restaurants: 1- Bandu Khan: a restaurant that specializes in kabobs and chicken bbq. Get their Beheri Kabobs with fresh Tandoori Naan. You won't regret it. 2- M&M Grill: Best burgers you can get in town. Period. Hope you enjoy. Don't forget to bring some back for me."),
                 new BlogPost("The Art of Dressing", "Part of being a man is knowing how to dress classy and always looking presesntable. This blog post can help you build that warddrobe. First off, updgade from wearing tshirts to polos. Secondly, if you are going to wear denim, make sure it is a dark color and fits nicely, or wear a pair of pants. Thirdly, stop wearing sneakers and start wearing loafers or oxfords, or leather shoes, such as boat shoes, for a more casual look. Last, but not least, always wear pressed clothes, comb your hair, wear a watch and some cologne. And there you have it: a well dressed man."),
-                new BlogPost("How Many Take Selfies", "1) Hold phone a little lower than normal. 2) Lower it a little more. 3) Lay it on table. 4) Don't take a selfie. Men don't take selfies.")
+                new BlogPost("How Men Take Selfies", "1) Hold phone a little lower than normal. 2) Lower it a little more. 3) Lay it on table. 4) Don't take a selfie. Men don't take selfies.")
             };
             Comments = new List<Comment>()
             {
