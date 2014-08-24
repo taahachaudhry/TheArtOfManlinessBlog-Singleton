@@ -45,11 +45,12 @@ namespace BlogSingleton.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult AddPost(string title, string post)
+        public ActionResult AddPost(string title, string post, string image)
         {
             BlogPost blogpost = new BlogPost();
             blogpost.Title = title;
             blogpost.Post = post;
+            blogpost.Image = image;
             blogpost.ID = BlogSingleton.Models.BlogPost.NextID++;
             blogpost.Date = DateTime.Today;
             blogposts.Add(blogpost);
@@ -70,6 +71,7 @@ namespace BlogSingleton.Controllers
                 BlogPost oldPost = (BlogPost)bp;
                 oldPost.Title = blogpost.Title;
                 oldPost.Post = blogpost.Post;
+                oldPost.Image = blogpost.Image;
             }
             return RedirectToAction("BlogPost", new { id = blogpost.ID });
         }

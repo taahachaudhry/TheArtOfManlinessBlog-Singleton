@@ -14,6 +14,7 @@
             <div class="panel-body">
                 <table class="table table-condensed table-striped table-responsive table-hover">
                     <tr onclick="location.href='/Home/BlogPost/@Model.FeaturedPost.ID'">
+                        <td><img style="height:50px; width:50px;" class=" img-responsive img-thumbnail" src="@Model.FeaturedPost.Image" /></td>
                         <td>@Model.FeaturedPost.Title</td>
                     </tr> 
                 </table>
@@ -25,10 +26,11 @@
             <div class="panel-heading" style="text-align:center; font-weight:700; font-size:large; padding-bottom: 0px;"><p>Recent Blog Entries</p></div>
             <div class="panel-body">
                 <table class="table table-condensed table-striped table-responsive table-hover">
-                    <tr><th>Date</th><th>Title</th><th></th></tr>
+                    <tr><th></th><th>Date</th><th>Title</th><th></th></tr>
                     @foreach (var post in Model.BlogPosts)
                     {
                         <tr onclick="location.href='/Home/BlogPost/@post.ID'">
+                            <td><img style="height:50px; width:50px;" class=" img-responsive img-thumbnail" src="@post.Image" /></td>
                             <td>@post.Date.ToShortDateString()</td>
                             <td>@post.Title</td>
                             @if (@post.Post.Length >= 50)

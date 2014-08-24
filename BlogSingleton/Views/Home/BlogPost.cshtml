@@ -5,6 +5,7 @@
         <div class="panel-heading" style="text-align:center; font-weight:700; font-size:30px; padding-bottom: 0px;"><p>@Model.BlogPosts[0].Title</p>
         </div>
         <div style="font-weight:400; font-size:25px; padding-bottom: 0px;">@Model.BlogPosts[0].Post</div><br />
+        <div><a href="@Model.BlogPosts[0].Image"><img class="img-responsive img-thumbnail" style="height:220px; width:220px; display: block; margin-left: auto; margin-right: auto;" src="@Model.BlogPosts[0].Image" /></a></div><br />
               @Model.BlogPosts[0].Date.ToShortDateString() <a class="btn btn-med btn-primary pull-right" href="/Home/EditBlogPost/@Model.BlogPosts[0].ID">Edit</a>
           </div>
     </div>

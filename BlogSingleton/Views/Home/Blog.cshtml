@@ -3,10 +3,11 @@
     <div class="panel-heading" style="text-align:center; font-weight:700; font-size:30px; padding-bottom: 0px;"><p>The Art of Manliness</p></div>
     <div class="panel-body">
         <table class="table table-condensed table-striped table-responsive table-hover">
-            <tr><th style="padding-bottom: 0px; padding-top: 10px;">Date</th><th style="padding-bottom: 0px; padding-top: 10px;">Title</th><th><a style="color:#c8c8c8" class="btn btn-default btn-sm pull-right" href="/Home/AddPost/">Add A Blog Post</a></th></tr>
+            <tr><th></th><th style="padding-bottom: 0px; padding-top: 10px;">Date</th><th style="padding-bottom: 0px; padding-top: 10px;">Title</th><th><a style="color:#c8c8c8" class="btn btn-default btn-sm pull-right" href="/Home/AddPost/">Add A Blog Post</a></th></tr>
             @foreach (var post in Model.BlogPosts)
             {
                 <tr onclick="location.href='/Home/BlogPost/@post.ID'">
+                    <td><img class="img-responsive img-thumbnail" style="height:50px; width:50px;" src="@post.Image"/></td>
                     <td>@post.Date.ToShortDateString()</td>
                     <td>@post.Title</td>
                     @if (@post.Post.Length >= 70)

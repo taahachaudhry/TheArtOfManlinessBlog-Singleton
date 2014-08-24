@@ -11,21 +11,19 @@ namespace BlogSingleton.Models
         public int ID { get; set; }
         public string Title { get; set; }
         public string Post { get; set; }
+        public string Image { get; set; }
         public DateTime Date { get; set; }
-        public BlogPost(string title, string post)
+        public BlogPost(string title, string post, string image)
         {
             ID = NextID++;
             Title = title;
             Post = post;
+            Image = image;
             Date = DateTime.Today;
         }
         public BlogPost()
         {
 
-        }
-        public int IncrementID()
-        {
-            return NextID++;
         }
     }
 }
