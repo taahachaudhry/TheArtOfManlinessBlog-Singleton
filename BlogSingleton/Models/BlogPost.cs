@@ -9,13 +9,15 @@ namespace BlogSingleton.Models
     {
         public static int NextID = 0;
         public int ID { get; set; }
+        public string Author { get; set; }
         public string Title { get; set; }
         public string Post { get; set; }
         public string Image { get; set; }
         public DateTime Date { get; set; }
-        public BlogPost(string title, string post, string image)
+        public BlogPost(string author, string title, string post, string image)
         {
             ID = NextID++;
+            Author = author;
             Title = title;
             Post = post;
             Image = image;

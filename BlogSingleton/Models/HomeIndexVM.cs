@@ -10,10 +10,12 @@ namespace BlogSingleton.Models
         public BlogPost FeaturedPost { get; set; }
         public List<BlogPost> BlogPosts { get; set; }
         public List<Comment> Comments { get; set; }
+        public List<Author> Authors { get; set; }
         public HomeIndexVM()
         {
             BlogPosts = new List<BlogPost>();
             Comments = new List<Comment>();
+            Authors = new List<Author>();
         }
     }
 }

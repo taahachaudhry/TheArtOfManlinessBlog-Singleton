@@ -11,7 +11,6 @@ namespace BlogSingleton.Controllers
     {
         List<BlogPost> blogposts = Singleton.Instance.BlogPosts;
         List<Comment> comments = Singleton.Instance.Comments;
-
         
         public ActionResult Index()
         {
@@ -19,7 +18,6 @@ namespace BlogSingleton.Controllers
             HomeIndexVM bucket = new HomeIndexVM();
             bucket.BlogPosts = blogposts;
             bucket.FeaturedPost = bucket.BlogPosts[RandomNum];
-            //bucket.BlogPosts = bucket.BlogPosts
             return View(bucket);
         }
 
@@ -27,7 +25,6 @@ namespace BlogSingleton.Controllers
         {
             HomeIndexVM bucket = new HomeIndexVM();
             bucket.BlogPosts = blogposts;
-            
             return View(bucket);
         }
 
@@ -109,7 +106,6 @@ namespace BlogSingleton.Controllers
 
             return RedirectToAction("Blog");
         }
-        
         //public ActionResult Search(string id)
         //{
         //    string searchString = id;
