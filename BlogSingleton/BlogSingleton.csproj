@@ -164,7 +164,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\HomeIndexVM.cs" />
     <Compile Include="Models\IdentityModels.cs" />

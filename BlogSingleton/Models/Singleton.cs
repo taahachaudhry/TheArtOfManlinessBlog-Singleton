@@ -10,7 +10,6 @@ namespace BlogSingleton.Models
         private static readonly Singleton instance = new Singleton();
         public List<BlogPost> BlogPosts { get; set; }
         public List<Comment> Comments { get; set; }
-        public List<Author> Authors { get; set; }
         static Singleton()
         {
 
@@ -30,11 +29,6 @@ namespace BlogSingleton.Models
                 new Comment("Ibrahim", "Upgraded my style and the compliments haven't stopped. Thank you!",1),
                 new Comment("Abdulghani","Any recommendations on where to shop?",1),
                 new Comment("Dean", "They need to add this to the brocode.", 2)
-            };
-            Authors = new List<Author>()
-            {
-                new Author("Taaha Chaudhry", 0),
-                new Author("A Classy Guy", 1)
             };
         }
         public static Singleton Instance
