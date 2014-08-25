@@ -42,9 +42,10 @@ namespace BlogSingleton.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult AddPost(string title, string post, string image)
+        public ActionResult AddPost(string author, string title, string post, string image)
         {
             BlogPost blogpost = new BlogPost();
+            blogpost.Author = author;
             blogpost.Title = title;
             blogpost.Post = post;
             blogpost.Image = image;
@@ -66,6 +67,7 @@ namespace BlogSingleton.Controllers
             if (bp.GetType().ToString() == "BlogSingleton.Models.BlogPost")
             {
                 BlogPost oldPost = (BlogPost)bp;
+                oldPost.Author = blogpost.Author;
                 oldPost.Title = blogpost.Title;
                 oldPost.Post = blogpost.Post;
                 oldPost.Image = blogpost.Image;
